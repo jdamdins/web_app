@@ -64,7 +64,7 @@ def get_students():
         '''
     
     student_data = pd.read_sql(query, con=conn)
-    student_json = student_data.to_dict(orient='index')
+    student_json = student_data.to_json(orient='records')
 
     #dictionary = {i: d for i, d in enumerate(student_json)}
     conn.close()
